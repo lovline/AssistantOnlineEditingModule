@@ -31,7 +31,7 @@
 			<div class="form-group">
 				<div class="col-sm-offset-2 col-sm-10">
 					<div class="checkbox">
-						<label> <input type="checkbox" name="remember" checked>
+						<label> <input type="checkbox" name="remember"> <!-- checked选中 -->
 							记住我的登录
 						</label>
 					</div>
