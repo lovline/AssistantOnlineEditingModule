@@ -13,11 +13,11 @@
 </div>
 <div class="row">
 	<div class='col-md-8 col-md-offset-2'>
-		<form class="form-horizontal" method="post">
+		<form class="form-horizontal" action="login" method="post">
 			<div class="form-group">
 				<label for="email" class="col-md-2 control-label">user_name</label>
 				<div class="col-sm-8">
-					<input type="email" class="form-control" id="username"
+					<input type="text" class="form-control" id="username"
 						name="username" placeholder="username">
 				</div>
 			</div>
