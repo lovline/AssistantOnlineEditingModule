@@ -2,6 +2,7 @@ package graduation.xidian.com;
 
 import java.io.IOException;
 import java.net.URLEncoder;
+import java.util.Date;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -33,11 +34,22 @@ public class LoginServlet extends HttpServlet {
 		String username = request.getParameter("username");
 		String password = request.getParameter("password");
 		UserBean bean = new UserBean();
-		//bean.setUsername(username);
+		//bean.setUsername(username); 这种方式需要请求转发，而不是重定向。
 		//request.setAttribute("bean", bean);
 		boolean isLogin = bean.login(username, password);
 		HttpSession session = request.getSession();
+		System.out.println(session.getId());
 		if(isLogin){
+			//Date lastVisited = bean.getVisitedTime(username); 这样做重新写一个方法，增加了代码量，无用。
+			//System.out.println("second----"+lastVisited);
+			session.setAttribute("lastVisited", bean.getLastVisited());
+			
+			String date = new Date().toLocaleString();
+			System.out.println(date);
+		
+			//Date nowVisited = new Date(); 错误的表示方式
+			//System.out.println("now time :"+nowVisited);
+			bean.updateTime(username, date);
 			bean.setLogged(true);
 			session.setAttribute("is_logged", bean.getLogged());
 			session.setAttribute("username", username);

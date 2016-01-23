@@ -3,7 +3,7 @@
 <%@ include file="header.jsp" %>
 <script type="text/javascript">
 	$(function(){
-		$("body").css("background-image","url(${pageContext.request.contextPath}/images/bg.jpg)");
+		$("body").css("background-image","url(${pageContext.request.contextPath}/images/loginbg.jpg)");
 		$('a:contains("university")').css("color","blue").css("font-size","18px");
 		//$("#xiaohui").fadeTo("fast","0.5"); 行不通
 	});

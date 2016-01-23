@@ -9,6 +9,12 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <title>temprorary title</title>
+<style type="text/css">
+	body{
+		background-repeat:no-repeat; 
+		background-attachment:fixed;
+	}
+</style>
 <script type="text/javascript" src="${pageContext.request.contextPath}/jQuery/jquery.min.js"></script>
 <script type="text/javascript" src="${pageContext.request.contextPath}/bootstrap/js/bootstrap.min.js"></script>
 <script type="text/javascript" src="ckeditor/ckeditor.js"></script>
