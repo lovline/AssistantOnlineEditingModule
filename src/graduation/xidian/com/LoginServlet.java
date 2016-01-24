@@ -24,8 +24,10 @@ public class LoginServlet extends HttpServlet {
 
 	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
-		request.getRequestDispatcher(request.getContextPath() + "/login.jsp").forward(request, response);
+		System.out.println("log out...");
+		HttpSession session = request.getSession();//这是用来注销账号的。。
+		session.invalidate();
+		request.getRequestDispatcher("/index.jsp").forward(request, response);
 	}
 
 	

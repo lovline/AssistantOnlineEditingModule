@@ -16,6 +16,8 @@
 	}
 </style>
 <script type="text/javascript" src="${pageContext.request.contextPath}/jQuery/jquery.min.js"></script>
+<script type="text/javascript" src="${pageContext.request.contextPath}/jQuery/jquery-1.7.2.js"></script>
+<script type="text/javascript" src="${pageContext.request.contextPath}/jQuery/jquery.validate.js"></script>
 <script type="text/javascript" src="${pageContext.request.contextPath}/bootstrap/js/bootstrap.min.js"></script>
 <script type="text/javascript" src="ckeditor/ckeditor.js"></script>
 <link rel="stylesheet" href="${pageContext.request.contextPath}/bootstrap/css/bootstrap.min.css"></link>
