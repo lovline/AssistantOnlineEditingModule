@@ -4,8 +4,9 @@
 
 	<h3>login failuer</h3>
 	<br>
-	<a href="editor.jsp">临时用户登录</a>
-	
+	<ul class="pager">
+		<li><a href="index.jsp">&larr;首页 index</a></li>
+	</ul>
 		<p> ${ is_logged } </p>
 		<c:if test="${ is_logged }">
 			<button>@#$%^&*()</button>

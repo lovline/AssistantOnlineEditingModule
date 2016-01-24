@@ -30,7 +30,7 @@ public class LoginServlet extends HttpServlet {
 
 	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
+		//System.out.println("this is the login servlet..."); 测试程序有没有进来，也就是servlet与jsp的映射是否正确
 		String username = request.getParameter("username");
 		String password = request.getParameter("password");
 		UserBean bean = new UserBean();
@@ -58,7 +58,7 @@ public class LoginServlet extends HttpServlet {
 		}else{
 			session.setAttribute("is_logged", bean.getLogged());
 			String info = URLEncoder.encode("Login Fail", "utf-8");
-			response.sendRedirect(request.getContextPath() + "/tmpUser.jsp?alert="+info);
+			response.sendRedirect(request.getContextPath() + "/errorPage.jsp?alert="+info);
 		}
 		
 		

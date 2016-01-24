@@ -34,8 +34,13 @@
 <script type="text/javascript">
 	$(function(){
 		$("body").css("background-image","url(${pageContext.request.contextPath}/images/editorbg.jpg)");
+		$("#welcome").css("opacity",0.7);
 		$('a:contains("university")').text("")
 		.append("<img style='width:150px' src='${pageContext.request.contextPath}/images/logo1.png'></img>");
+		$("#beforeEditor").click(function(){
+			$("#beforeEditor").hide("normal");
+			$("#realEditor").show("normal","linear");
+		});
 	});
 </script>
 
@@ -45,7 +50,7 @@
 		Module...</div>
 </div>
 <!-- 获取当前时间 -->
-<div align="right">
+<div align="right" style="float: right">
 	<c:if test="${ is_logged }">
 		<span>
 			<font color="green">您上次登录的时间为： </font> ${ lastVisited }
@@ -56,8 +61,12 @@
 		<font color="green">系统当前时间为：</font><span id="time"></span>
 	</span>
 </div>
-<!-- 这个是刚开始的界面 需要在调用后面的时候隐藏起来的 还要加入一些显示的动画的 -->
-<div>
+<ul class="pager" style="opacity:0.5">
+		<li><a href="index.jsp">&larr;首页 index</a></li>
+</ul>
+
+<!-- 这个是刚开始的界面 需要在调用后面的时候隐藏起来的 还要加入一些显示的动画的 ===done-->
+<div id="beforeEditor">
 	<div class="page-header col-md-8 col-md-offset-2 text-center">
 		<h1>
 			辅导信息在线系统研发 <small>欢迎界面</small>
@@ -65,7 +74,7 @@
 		<hr />
 	</div>
 	
-	<div class="jumbotron col-md-8 col-md-offset-2 text-center">
+	<div class="jumbotron col-md-8 col-md-offset-2 text-center" id="welcome">
 		<h1>Hello, 
 			<c:choose>
 				<c:when test="${ is_logged }">
@@ -76,53 +85,58 @@
 		</h1>
 		<p>just start your life , just do it .</p>
 		<p>
-			<a class="btn btn-success btn-lg" href="" role="button">show panel</a>
+			<a class="btn btn-success btn-lg" id="showPanel">show panel</a>
 		</p>
 	</div>
 </div>
 
-<form action="" method="post">
-	<div class="row" id="hidden_editor">
-	
-  		<div class="col-md-4 col-md-offset-8">
-  			<c:choose>
-				<c:when test="${ is_logged }">
-					welcome <a href="">${ username } </a>
-				</c:when>
-				<c:otherwise>welcome friend! </c:otherwise>
-			</c:choose>
-			<img src="images/head.jpg" alt="远方的岛和星期五" class="img-rounded">
-		</div>
-	
-		
+<div id="realEditor" style="display: none">
+	<form action="editor" method="post">
 		<div class="col-md-8 col-md-offset-2">
-			<div class="form-group">
-				<label for="exampleInputEmail1"><h3>my_editor_theme</h3></label> <input
-					type="email" class="form-control" id="exampleInputEmail3"
-					placeholder="enter your subject...">
-			</div>
-			<textarea id="editor1" name="editor1"><span
-					style="font-size: 16px;">Initial value...</span>
-				</p></textarea>
-			<script type="text/javascript">
-				CKEDITOR.replace('editor1');
-			</script>
-			<div>
-				<button type="button" class="btn btn-primary">submit my
-					editor</button>
-			</div>
-
-
-			<!-- 登陆成功 具有登陆后的所有权限 -->
-			<c:if test="${ is_logged }">
-					c:if #some codes...
-				</c:if>
-
-
+			<p class="navbar-text"></p>
+			<p class="navbar-text"></p>
 		</div>
-	</div>
-</form>
-
+		<div class="row" id="hidden_editor">
+	  		<div class="col-md-4 col-md-offset-8">
+	  			<c:choose>
+					<c:when test="${ is_logged }">
+						welcome <font color="blue">${ username } </font>
+					</c:when>
+					<c:otherwise>welcome friend! </c:otherwise>
+				</c:choose>
+				<img src="images/head.jpg" alt="远方的岛和星期五" class="img-rounded">
+			</div>
+		
+			
+			<div class="col-md-8 col-md-offset-2">
+				<div class="form-group">
+					<label for="exampleInputEmail1"><h3>my_editor_theme</h3></label> <input
+						type="email" class="form-control" id="exampleInputEmail3"
+						placeholder="enter your subject...">
+				</div>
+				<textarea id="editor1" name="editor1"><span
+						style="font-size: 16px;">Initial value...</span>
+					</p></textarea>
+				<script type="text/javascript">
+					CKEDITOR.replace('editor1');
+				</script>
+				<br>
+				<div>
+					<button type="submit" class="btn btn-primary">submit my
+						editor</button>
+				</div>
+	
+	
+				<!-- 登陆成功 具有登陆后的所有权限 -->
+				<c:if test="${ is_logged }">
+						<font color="red">c:if #some codes...</font>
+					</c:if>
+	
+	
+			</div>
+		</div>
+	</form>
+</div>
 
 <%@ include file="footer.jsp" %>
 
