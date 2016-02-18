@@ -2,7 +2,9 @@ package graduation.xidian.com;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 public class UserBean {
 	
@@ -88,6 +90,37 @@ public class UserBean {
 		db.update(sql);
 	}
 	
+	public Integer checkUserId(String username) {
+		DB db = new DB();
+		String sql = "select id from sstu where username=\""+username+"\"";
+		ResultSet rs = db.select(sql);
+		try {
+			if(rs.next()){
+				System.out.println("sstu id :"+rs.getInt("id"));
+				return rs.getInt("id");
+			}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return null;
+	}
+	
+	public String getUserNameFromUserId(int user_id) {
+		DB db = new DB();
+		String sql = "select * from sstu where id="+user_id;
+		ResultSet rs = db.select(sql);
+		try {
+			if(rs.next()){
+				return rs.getString("username");
+			}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return null;
+	}
+	
 //	public Date getVisitedTime(String username) {
 //		DB db = new DB();
 //		String sql = "select * from sstu where username=\""+username+"\"";
@@ -103,6 +136,7 @@ public class UserBean {
 //		}
 //		return null;
 //	}
+	
 	
 	
 

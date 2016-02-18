@@ -59,6 +59,7 @@ public class LoginServlet extends HttpServlet {
 			response.sendRedirect(request.getContextPath() + "/index.jsp?alert="+info);
 		}else{
 			session.setAttribute("is_logged", bean.getLogged());
+			session.setAttribute("count", 0);
 			String info = URLEncoder.encode("Login Fail", "utf-8");
 			response.sendRedirect(request.getContextPath() + "/errorPage.jsp?alert="+info);
 		}

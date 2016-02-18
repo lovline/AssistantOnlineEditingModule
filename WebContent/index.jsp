@@ -6,7 +6,7 @@
 <script type="text/javascript">
 	$(function(){
 		$("body").css("background-image","url(${pageContext.request.contextPath}/images/indexbg.jpg)");
-		$("#xidian_index").css("opacity",0.6);
+		$("#xidian_index").css("opacity",0.7);
 	});
 </script>
 

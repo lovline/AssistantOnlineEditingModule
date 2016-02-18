@@ -62,7 +62,7 @@
 	</span>
 </div>
 <ul class="pager" style="opacity:0.5">
-		<li><a href="index.jsp">&larr;首页 index</a></li>
+		<li><a href="index.jsp" class="btn-lg">&larr;首页 index</a></li>
 </ul>
 
 <!-- 这个是刚开始的界面 需要在调用后面的时候隐藏起来的 还要加入一些显示的动画的 ===done-->
@@ -110,13 +110,31 @@
 			
 			<div class="col-md-8 col-md-offset-2">
 				<div class="form-group">
-					<label for="exampleInputEmail1"><h3>my_editor_theme</h3></label> <input
-						type="email" class="form-control" id="exampleInputEmail3"
+					<label for="exampleInputEmail1"><h3>my_editor_theme  </h3></label> 
+					<!-- 作为div弹出层的部分 是bootstrap jQuery插件所自带的功能 很好用。 -->
+					<a class="btn text-center" data-toggle="modal" href="#myModal"
+						data-keyboard="true" data-backdrop="true"><font color="#0180DD"><font size="4">[-- 简单文本快速编辑 -]</font></font></a>
+					<input type="email" class="form-control" id="exampleInputEmail3"
 						placeholder="enter your subject...">
+						
+						<!-- 悬浮窗的呈现部分。 -->
+					<div class="modal" id="myModal" style="width:600px;height:400px;margin:auto;">
+						<div class="modal-header">
+							<a class="close" data-dismiss="modal">×</a>
+							
+						</div>
+						<div class="modal-body">
+							<textarea rows="7" cols="75" name="editor-hidden" placeholder="编辑内容不得多于140字..."></textarea>		
+						</div>
+						<div class="modal-footer">
+							<a href="editor"><font color="white">save editor</font></a>
+						</div>
+					</div>
+										
+						
 				</div>
-				<textarea id="editor1" name="editor1"><span
-						style="font-size: 16px;">Initial value...</span>
-					</p></textarea>
+				<textarea id="editor1" name="editor1"><span style="font-size: 16px;">Initial value...</span>
+					</textarea>
 				<script type="text/javascript">
 					CKEDITOR.replace('editor1');
 				</script>
@@ -126,12 +144,10 @@
 						editor</button>
 				</div>
 	
-	
 				<!-- 登陆成功 具有登陆后的所有权限 -->
 				<c:if test="${ is_logged }">
-						<font color="red">c:if #some codes...</font>
-					</c:if>
-	
+					<font color="red">c:if #some codes...</font>
+				</c:if>
 	
 			</div>
 		</div>
@@ -139,4 +155,3 @@
 </div>
 
 <%@ include file="footer.jsp" %>
-

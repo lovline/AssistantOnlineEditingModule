@@ -25,6 +25,7 @@
 </script>
 <div class="page-header col-md-7 col-md-offset-2">
   <h1>  西电智能教育辅导信息在线编辑   <small>登陆入口</small></h1>
+  <hr>
 </div>
 <c:choose>
 	<c:when test="${ is_logged }">
@@ -35,9 +36,9 @@
 			<div>
 				欢迎您 ，<font color="#FD5F2F" size="5">${ username }</font>&nbsp;&nbsp;! &nbsp;您已经成功登录 。
 			</div>
-			 <ul class="pager" style="opacity: 0.7">
-				<li><a href="index.jsp">&larr;首页 index</a></li>
-			 </ul>
+		 <ul class="pager" style="opacity: 0.7">
+			<li><a href="index.jsp" class="btn-lg">&larr;首页 index</a></li>
+		 </ul>
 		</div>
 		<br>
 	</c:when>
@@ -46,16 +47,16 @@
 			<div class='col-md-8 col-md-offset-2'>
 				<form class="form-horizontal" action="login" method="post" id="formLogin">
 					<div class="form-group">
-						<label for="email" class="col-md-2 control-label">user_name</label>
+						<label for="email" class="col-md-2 control-label"><font size="4">user_name</font></label>
 						<div class="col-sm-8">
-							<input type="text" class="form-control" id="username"
+							<input type="text" class="form-control btn-lg" id="username"
 								name="username" placeholder="username">
 						</div>
 					</div>
 					<div class="form-group">
-						<label for="password" class="col-md-2 control-label">pass_word</label>
+						<label for="password" class="col-md-2 control-label"><font size="4">pass_word</font></label>
 						<div class="col-sm-8">
-							<input type="password" class="form-control" id="password"
+							<input type="password" class="form-control btn-lg" id="password"
 								name="password" placeholder="password">
 						</div>
 					</div>
