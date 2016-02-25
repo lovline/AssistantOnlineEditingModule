@@ -13,6 +13,8 @@ public class UserBean {
 	private String password;
 	private Date lastVisited;
 	
+	private boolean isLogged = false;
+	
 	public Date getLastVisited() {
 		return lastVisited;
 	}
@@ -22,7 +24,6 @@ public class UserBean {
 	public boolean isLogged() {
 		return isLogged;
 	}
-	private boolean isLogged = false;
 	
 	public boolean getLogged() {
 		return isLogged;
@@ -58,7 +59,6 @@ public class UserBean {
 		this.lastVisited = lastVisited;
 		this.isLogged = isLogged;
 	}
-	
 	public UserBean() {
 		super();
 	}
@@ -119,6 +119,23 @@ public class UserBean {
 			e.printStackTrace();
 		}
 		return null;
+	}
+	
+	public boolean checkUsername(String username) {
+		DB db = new DB();
+		String sql = "select id from sstu where username=\""+username+"\"";
+		ResultSet rs = db.select(sql);
+		try {
+			if(rs.next()){
+				return true;
+			}else{
+				return false;
+			}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return false;
 	}
 	
 //	public Date getVisitedTime(String username) {

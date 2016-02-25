@@ -50,7 +50,7 @@
 						<label for="email" class="col-md-2 control-label"><font size="4">user_name</font></label>
 						<div class="col-sm-8">
 							<input type="text" class="form-control btn-lg" id="username"
-								name="username" placeholder="username">
+								name="username" placeholder="<%=((session.getAttribute("username")!=null) ? session.getAttribute("username") : "username") %>">
 						</div>
 					</div>
 					<div class="form-group">
@@ -73,7 +73,7 @@
 						<div class="col-sm-offset-2 col-sm-10">
 							<button type="submit" class="btn btn-primary btn-lg" id="submitLogin">登录</button>
 							<ul class="pager" style="opacity: 0.7">
-								<li><a href="index.jsp">&larr;首页 index</a></li>
+								<li><a href="index.jsp" class="btn-lg">&larr;首页 index</a></li>
 							</ul>
 						</div>
 					</div>

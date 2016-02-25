@@ -60,6 +60,13 @@ public class LoginServlet extends HttpServlet {
 		}else{
 			session.setAttribute("is_logged", bean.getLogged());
 			session.setAttribute("count", 0);
+			boolean check_username = bean.checkUsername(username);
+			if(check_username){
+				session.setAttribute("username", username);
+			}else{
+				session.setAttribute("username", null);
+			}
+			session.setAttribute("check_username", check_username);
 			String info = URLEncoder.encode("Login Fail", "utf-8");
 			response.sendRedirect(request.getContextPath() + "/errorPage.jsp?alert="+info);
 		}
