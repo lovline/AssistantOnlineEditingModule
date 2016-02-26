@@ -66,7 +66,7 @@
 </ul>
 
 <!-- 这个是刚开始的界面 需要在调用后面的时候隐藏起来的 还要加入一些显示的动画的 ===done-->
-<div id="beforeEditor">
+<div id="beforeEditor" style="<%=(session.getAttribute("numVisited"))==null ? "display: block" : "display: none" %>">
 	<div class="page-header col-md-8 col-md-offset-2 text-center">
 		<h1>
 			辅导信息在线系统研发 <small>欢迎界面</small>
@@ -90,7 +90,7 @@
 	</div>
 </div>
 
-<div id="realEditor" style="display: none">
+<div id="realEditor" style="<%=(session.getAttribute("numVisited"))==null ? "display: none" : "display: block" %>">
 	<form action="editor" method="post">
 		<div class="col-md-8 col-md-offset-2">
 			<p class="navbar-text"></p>
@@ -106,42 +106,45 @@
 				</c:choose>
 				<img src="images/head.jpg" alt="远方的岛和星期五" class="img-rounded">
 			</div>
-		
 			
 			<div class="col-md-8 col-md-offset-2">
 				<div class="form-group">
-					<label for="exampleInputEmail1"><h3>my_editor_theme  </h3></label> 
+					<label for="exampleInputEmail1"><h3>my_editor&nbsp;&nbsp;&nbsp;</h3></label> 
 					<!-- 作为div弹出层的部分 是bootstrap jQuery插件所自带的功能 很好用。 -->
-					<a class="btn text-center" data-toggle="modal" href="#myModal"
-						data-keyboard="true" data-backdrop="true"><font color="#0180DD"><font size="4">[-- 简单文本快速编辑 -]</font></font></a>
-					<input type="email" class="form-control" id="exampleInputEmail3"
-						placeholder="enter your subject...">
-						
-						<!-- 悬浮窗的呈现部分。 -->
-					<div class="modal" id="myModal" style="width:600px;height:400px;margin:auto;">
-						<div class="modal-header">
-							<a class="close" data-dismiss="modal">×</a>
-							
-						</div>
-						<div class="modal-body">
-							<textarea rows="7" cols="75" name="editor-hidden" placeholder="编辑内容不得多于140字..."></textarea>		
-						</div>
-						<div class="modal-footer">
-							<a href="editor"><font color="white">save editor</font></a>
-						</div>
-					</div>
-										
+					<a data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo">    <font size="3">{-- 简单文本快速编辑 --}</font></a>
+					<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel">
+					  <div class="modal-dialog" role="document">
+					    <div class="modal-content">
+					      <div class="modal-header">
+					        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+					        <h4 class="modal-title" id="exampleModalLabel">new editor ~</h4>
+					      </div>
+					      <div class="modal-body">
+					          <div class="form-group">
+					            <label for="recipient-name" class="control-label">emergency contact person@</label>
+					            <input type="text" class="form-control" id="recipient-name">
+					          </div>
+					          <div class="form-group">
+					            <label for="message-text" class="control-label">emergency message:</label>
+					            <textarea class="form-control" id="message-text" name="editor2" rows="7"></textarea>
+					          </div>
+					      </div>
+					      <div class="modal-footer">
+					        <button type="button" class="btn btn-default" data-dismiss="modal">close</button>
+					        <a href="editor" class="btn btn-primary">save editor</a>
+					      </div>
+					    </div>
+					  </div>
+					</div>				
 						
 				</div>
-				<textarea id="editor1" name="editor1"><span style="font-size: 16px;">Initial value...</span>
-					</textarea>
+				<textarea id="editor1" name="editor1"></textarea>
 				<script type="text/javascript">
 					CKEDITOR.replace('editor1');
 				</script>
 				<br>
 				<div>
-					<button type="submit" class="btn btn-primary">submit my
-						editor</button>
+					<button type="submit" class="btn btn-primary">submit my editor</button>
 				</div>
 	
 				<!-- 登陆成功 具有登陆后的所有权限 -->

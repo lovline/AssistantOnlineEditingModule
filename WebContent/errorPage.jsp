@@ -33,6 +33,13 @@
 		<a href="login.jsp" class="btn btn-success btn-lg">重新登录</a>
 	</div>
 </div>
-		
-
-<%@ include file="footer.jsp" %>
+<div class="row" style="margin-top: 80px">
+	<div class="col-md-12 text-center">
+		<font color="white"><strong>版权所有 2016 &copy;</strong></font><a
+			href="http://www.xidian.edu.cn/">&nbsp;&nbsp;xi'dian university</a> <br />
+		<br /> <img id="xiaohui" style="width: 120px"
+			src="${pageContext.request.contextPath}/images/logo.png"></img>
+	</div>
+</div>
+</body>
+</html>
