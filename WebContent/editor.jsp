@@ -33,6 +33,7 @@
 </script>
 <script type="text/javascript">
 	$(function(){
+		document.title = "在线编辑";
 		$("body").css("background-image","url(${pageContext.request.contextPath}/images/editorbg.jpg)");
 		$("#welcome").css("opacity",0.7);
 		$('a:contains("university")').text("")
@@ -97,15 +98,17 @@
 			<p class="navbar-text"></p>
 		</div>
 		<div class="row" id="hidden_editor">
-	  		<div class="col-md-4 col-md-offset-8">
+	  		<div class="col-md-5 col-md-offset-7">
 	  			<c:choose>
 					<c:when test="${ is_logged }">
 						welcome <font color="blue">${ username } </font>
+						<a target="_blank" href="http://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&email=GCkoLyEhLywoIC1YaWk2e3d1" style="text-decoration:none;"><img src="images/ico_mailme.png"/></a>
 					</c:when>
 					<c:otherwise>welcome friend! </c:otherwise>
 				</c:choose>
-				<img src="images/head.jpg" alt="远方的岛和星期五" class="img-rounded">
+				<img src="images/head.jpg" alt="远方的岛和星期五" class="img-rounded">				
 			</div>
+			
 			
 			<div class="col-md-8 col-md-offset-2">
 				<div class="form-group">
@@ -126,17 +129,17 @@
 					          </div>
 					          <div class="form-group">
 					            <label for="message-text" class="control-label">emergency message:</label>
-					            <textarea class="form-control" id="message-text" name="editor2" rows="7"></textarea>
+					            <textarea class="form-control" id="message-text" name="editor2" rows="7" placeholder="留言内容不能超过140字"></textarea>
 					          </div>
 					      </div>
 					      <div class="modal-footer">
 					        <button type="button" class="btn btn-default" data-dismiss="modal">close</button>
-					        <a href="editor" class="btn btn-primary">save editor</a>
+					        <button type="submit" class="btn btn-primary">save editor</button>
 					      </div>
 					    </div>
 					  </div>
 					</div>				
-						
+				
 				</div>
 				<textarea id="editor1" name="editor1"></textarea>
 				<script type="text/javascript">

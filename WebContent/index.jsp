@@ -5,6 +5,7 @@
 
 <script type="text/javascript">
 	$(function(){
+		document.title = "毕业设计导航";
 		$("body").css("background-image","url(${pageContext.request.contextPath}/images/indexbg.jpg)");
 		$("#xidian_index").css("opacity",0.7);
 	});

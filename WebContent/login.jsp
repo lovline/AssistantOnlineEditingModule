@@ -3,6 +3,7 @@
 <%@ include file="header.jsp" %>
 <script type="text/javascript">
 	$(function(){
+		document.title = "西电会员登录";
 		$("body").css("background-image","url(${pageContext.request.contextPath}/images/loginbg.jpg)");
 		$('a:contains("university")').css("color","blue").css("font-size","18px");
 		//$("#xiaohui").fadeTo("fast","0.5"); 行不通

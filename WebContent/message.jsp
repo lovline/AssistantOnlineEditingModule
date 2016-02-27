@@ -18,6 +18,7 @@
 <script type="text/javascript">
 	var flag = true;
 	$(function(){
+		document.title = "寄语堂";
 		$("body").css("background-image","url(${pageContext.request.contextPath}/images/messagebg.jpg)");
 		$("#show_message").click(function(){
 			if(flag){

@@ -4,6 +4,7 @@
 
 <script type="text/javascript">
 	$(function(){
+		document.title = "错误处理";
 		$("body").css("background-image","url(${pageContext.request.contextPath}/images/errorbg.jpg)");
 	});
 </script>

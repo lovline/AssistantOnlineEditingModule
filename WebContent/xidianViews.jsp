@@ -4,6 +4,7 @@
 
 <script type="text/javascript">
 	$(function(){
+		document.title = "大美西电";
 		$("body").css("background-image","url(${pageContext.request.contextPath}/images/viewbg.jpg)");
 	});
 </script>

@@ -9,6 +9,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <title>temprorary title</title>
+<link rel="Shortcut Icon" href="images/titlebg.ico" />
 <style type="text/css">
 	body{
 		background-repeat:no-repeat; 

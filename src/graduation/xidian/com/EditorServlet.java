@@ -16,13 +16,11 @@ public class EditorServlet extends HttpServlet {
        
     public EditorServlet() {
         super();
-       
     }
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		request.setCharacterEncoding("utf-8");
-		String contents = request.getParameter("editor2");
-		System.out.println(contents); //为什么得到的老是null呢。。奇怪
+		
 		
 			
 		request.getRequestDispatcher("/editor.jsp").forward(request, response);
@@ -34,7 +32,13 @@ public class EditorServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		request.setCharacterEncoding("utf-8");
 		String contents = request.getParameter("editor1");
-		System.out.println(contents);
+		String contents2 = request.getParameter("editor2");
+		if(contents!=null && contents!=""){
+			System.out.println(contents);   //直接在ckeditor里面得到的string是加在<p>标签里的字符串，需要后期特殊处理，用正则表达式
+		}
+		if(contents2!=null && contents2!=""){
+			System.out.println(contents2);  //悬浮窗得到的string
+		}
 		
 		//这是用来限制beforeEditor界面出现一次，当编辑提交时直接出现realEditor界面
 		HttpSession session = request.getSession();
