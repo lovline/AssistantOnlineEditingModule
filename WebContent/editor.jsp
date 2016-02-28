@@ -92,72 +92,117 @@
 </div>
 
 <div id="realEditor" style="<%=(session.getAttribute("numVisited"))==null ? "display: none" : "display: block" %>">
-	<form action="editor" method="post">
-		<div class="col-md-8 col-md-offset-2">
-			<p class="navbar-text"></p>
-			<p class="navbar-text"></p>
-		</div>
-		<div class="row" id="hidden_editor">
-	  		<div class="col-md-5 col-md-offset-7">
-	  			<c:choose>
-					<c:when test="${ is_logged }">
+	
+	<div class="col-md-8 col-md-offset-2">
+		<p class="navbar-text"></p>
+		<p class="navbar-text"></p>
+	</div>
+	<div class="col-md-5 col-md-offset-7">
+		<c:choose>
+			<c:when test="${ is_logged }">
 						welcome <font color="blue">${ username } </font>
-						<a target="_blank" href="http://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&email=GCkoLyEhLywoIC1YaWk2e3d1" style="text-decoration:none;"><img src="images/ico_mailme.png"/></a>
-					</c:when>
-					<c:otherwise>welcome friend! </c:otherwise>
-				</c:choose>
-				<img src="images/head.jpg" alt="远方的岛和星期五" class="img-rounded">				
-			</div>
-			
-			
-			<div class="col-md-8 col-md-offset-2">
-				<div class="form-group">
-					<label for="exampleInputEmail1"><h3>my_editor&nbsp;&nbsp;&nbsp;</h3></label> 
-					<!-- 作为div弹出层的部分 是bootstrap jQuery插件所自带的功能 很好用。 -->
-					<a data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo">    <font size="3">{-- 简单文本快速编辑 --}</font></a>
-					<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel">
-					  <div class="modal-dialog" role="document">
-					    <div class="modal-content">
-					      <div class="modal-header">
-					        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-					        <h4 class="modal-title" id="exampleModalLabel">new editor ~</h4>
-					      </div>
-					      <div class="modal-body">
-					          <div class="form-group">
-					            <label for="recipient-name" class="control-label">emergency contact person@</label>
-					            <input type="text" class="form-control" id="recipient-name">
-					          </div>
-					          <div class="form-group">
-					            <label for="message-text" class="control-label">emergency message:</label>
-					            <textarea class="form-control" id="message-text" name="editor2" rows="7" placeholder="留言内容不能超过140字"></textarea>
-					          </div>
-					      </div>
-					      <div class="modal-footer">
-					        <button type="button" class="btn btn-default" data-dismiss="modal">close</button>
-					        <button type="submit" class="btn btn-primary">save editor</button>
-					      </div>
-					    </div>
-					  </div>
-					</div>				
+				<a target="_blank"
+					href="http://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&email=GCkoLyEhLywoIC1YaWk2e3d1"
+					style="text-decoration: none;"><img src="images/ico_mailme.png" /></a>
+			</c:when>
+			<c:otherwise>welcome friend! </c:otherwise>
+		</c:choose>
+		<img src="images/head.jpg" alt="远方的岛和星期五" class="img-rounded">
+	</div>
+
+	<div class="col-md-8 col-md-offset-2" style="margin-top: 10px;">
+		<img src="images/ckeditor.jpg" title="请点击查看在线编辑模块" data-toggle="collapse"
+			data-target="#demo" style="opacity:0.7"></img>
+		<div id="demo" class="collapse">
+			<form action="editor" method="post">
+				<div class="row" id="hidden_editor">
+						<div class="form-group">
+							<label for="exampleInputEmail1"><h3>my_editor&nbsp;&nbsp;&nbsp;</h3></label>
+							<!-- 作为div弹出层的部分 是bootstrap jQuery插件所自带的功能 很好用。 -->
+							<a data-toggle="modal" data-target="#exampleModal"
+								data-whatever="@mdo"> <font size="3">{-- 简单文本快速编辑 --}</font></a>
+							<div class="modal fade" id="exampleModal" tabindex="-1"
+								role="dialog" aria-labelledby="exampleModalLabel">
+								<div class="modal-dialog" role="document">
+									<div class="modal-content">
+										<div class="modal-header">
+											<button type="button" class="close" data-dismiss="modal"
+												aria-label="Close">
+												<span aria-hidden="true">&times;</span>
+											</button>
+											<h4 class="modal-title" id="exampleModalLabel">new
+												editor ~</h4>
+										</div>
+										<div class="modal-body">
+											<div class="form-group">
+												<label for="recipient-name" class="control-label">emergency
+													contact person@</label> <input type="text" class="form-control"
+													id="recipient-name" name="emergency_person">
+											</div>
+											<div class="form-group">
+												<label for="message-text" class="control-label">emergency
+													message:</label>
+												<textarea class="form-control" id="message-text"
+													name="editor2" rows="7" placeholder="留言内容不能超过140字"></textarea>
+											</div>
+										</div>
+										<div class="modal-footer">
+											<button type="button" class="btn btn-default"
+												data-dismiss="modal">close</button>
+											<button type="submit" class="btn btn-primary">save
+												editor</button>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<textarea id="editor1" name="editor1"></textarea>
+						<script type="text/javascript">
+							CKEDITOR.replace('editor1');
+						</script>
+						<br>
+						<div>
+							<button type="submit" class="btn btn-primary">submit my
+								editor</button>
+						</div>
+
+						<!-- 登陆成功 具有登陆后的所有权限 -->
+						<c:if test="${ is_logged }">
+							<font color="red">c:if #some codes...</font>
+						</c:if>
 				
 				</div>
-				<textarea id="editor1" name="editor1"></textarea>
-				<script type="text/javascript">
-					CKEDITOR.replace('editor1');
-				</script>
-				<br>
-				<div>
-					<button type="submit" class="btn btn-primary">submit my editor</button>
-				</div>
-	
-				<!-- 登陆成功 具有登陆后的所有权限 -->
-				<c:if test="${ is_logged }">
-					<font color="red">c:if #some codes...</font>
-				</c:if>
-	
+			</form>
+		</div>
+		<hr>
+		<img src="images/mathjax.jpg" title="请点击查看数学公式编辑模块" data-toggle="collapse"
+			data-target="#demo2" style="opacity:0.7"></img>
+		<div id="demo2" class="collapse"> <!-- class="collapse in"指的是默认打开折叠层 -->
+			<div style="margin-top: 10px;background-color: #F1F1F1;">
+					<font size="4" color="black">
+					【 $1 \over 3$ 】
+					【 $\sqrt[n]{3}$ 】
+					【 $\alpha$ 】
+					【 $\Gamma$ 】
+					【 $\delta$ 】 <br><br>
+					【 $\sideset{^1_2}{^3_4}\bigotimes$ 】
+					【 $\left. \frac{{\rm d}u}{{\rm d}x} \right| _{x=0}$ 】
+					【 $\vec{a} \cdot \vec{b}=0$ 】
+					【 $\int_0^1 x^2 {\rm d}x$ 】<br>
+					【 $\lim_{n \rightarrow +\infty} \frac{1}{n(n+1)}$ 】
+					【 $\sum_{i=0}^n \frac{1}{i^2}　和　\prod_{i=0}^n \frac{1}{i^2}$ 】
+					【 $\overbrace{a+\underbrace{b+c}_{1.0}+d}^{2.0}$ 】<br>
+					【 $x^{y^z}=(1+{\rm e}^x)^{-2xy^w}$ 】
+					【 $x = {-b \pm \sqrt{b^2-4ac} \over 2a}$ 】
+					【 $f(x,y,z) = 3y^2z \left( 3+\frac{7x+5}{1+y^2} \right)$ 】<br><br>
+					【 $f(x_1,x_2,\ldots,x_n) = x_1^2 + x_2^2 + \cdots + x_n^2$ 】
+					【 $J_\alpha(x) = \sum_{m=0}^\infty \frac{(-1)^m}{m! \Gamma (m + \alpha + 1)} {\left({ \frac{x}{2} }\right)}^{2m + \alpha}$ 】
+					</font>
 			</div>
 		</div>
-	</form>
+	</div>
+	
+	
 </div>
 
 <%@ include file="footer.jsp" %>
