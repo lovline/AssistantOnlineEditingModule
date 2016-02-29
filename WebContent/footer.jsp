@@ -9,6 +9,5 @@
 		<img id="xiaohui" style="width:120px" src="${pageContext.request.contextPath}/images/logo.png"></img>
 	</div>
 </div>
-</style>
 </body>
 </html>

@@ -73,27 +73,159 @@
 
 <!-- 回到顶部测试 -->
 <button class="glyphicon glyphicon-open btn-lg" aria-hidden="true" aria-label="返回顶部"></button>
+<a href="#return_top">
+	<button class="glyphicon glyphicon-open btn-lg" aria-hidden="true" aria-label="返回顶部"></button>
+</a>
+ 
 
-  
-<!-- <!-- 网页中显示数学公式测试  这里使LaTex语法编写
-$$1 \over 3$$
-$$\sqrt[n]{3}$$
-$$\alpha$$
-$$\Gamma$$
-$$\delta$$
-$$\sideset{^1_2}{^3_4}\bigotimes$$
-$$\left. \frac{{\rm d}u}{{\rm d}x} \right| _{x=0}$$
-$$\vec{a} \cdot \vec{b}=0$$
-$$\int_0^1 x^2 {\rm d}x$$
-$$\lim_{n \rightarrow +\infty} \frac{1}{n(n+1)}$$
-$$\sum_{i=0}^n \frac{1}{i^2}　和　\prod_{i=0}^n \frac{1}{i^2}$$
-$$\overbrace{a+\underbrace{b+c}_{1.0}+d}^{2.0}$$
-$$x^{y^z}=(1+{\rm e}^x)^{-2xy^w}$$
-$$x = {-b \pm \sqrt{b^2-4ac} \over 2a}$$
-$$f(x,y,z) = 3y^2z \left( 3+\frac{7x+5}{1+y^2} \right)$$
-$$f(x_1,x_2,\ldots,x_n) = x_1^2 + x_2^2 + \cdots + x_n^2$$
-$$J_\alpha(x) = \sum_{m=0}^\infty \frac{(-1)^m}{m! \Gamma (m + \alpha + 1)} {\left({ \frac{x}{2} }\right)}^{2m + \alpha}$$
- --> 
+ <!-- 网页中显示数学公式测试  这里使LaTex语法编写 -->
+<!-- $$1 \over 3$$ -->
+<!-- $$\sqrt[n]{3}$$ -->
+<!-- $$\alpha$$ -->
+<!-- $$\Gamma$$ -->
+<!-- $$\delta$$ -->
+<!-- $$\sideset{^1_2}{^3_4}\bigotimes$$ -->
+<!-- $$\left. \frac{{\rm d}u}{{\rm d}x} \right| _{x=0}$$ -->
+<!-- $$\vec{a} \cdot \vec{b}=0$$ -->
+<!-- $$\int_0^1 x^2 {\rm d}x$$ -->
+<!-- $$\lim_{n \rightarrow +\infty} \frac{1}{n(n+1)}$$ -->
+<!-- $$\sum_{i=0}^n \frac{1}{i^2}　和　\prod_{i=0}^n \frac{1}{i^2}$$ -->
+<!-- $$\overbrace{a+\underbrace{b+c}_{1.0}+d}^{2.0}$$ -->
+<!-- $$x^{y^z}=(1+{\rm e}^x)^{-2xy^w}$$ -->
+<!-- $$x = {-b \pm \sqrt{b^2-4ac} \over 2a}$$ -->
+<!-- $$f(x,y,z) = 3y^2z \left( 3+\frac{7x+5}{1+y^2} \right)$$ -->
+<!-- $$f(x_1,x_2,\ldots,x_n) = x_1^2 + x_2^2 + \cdots + x_n^2$$ -->
+<!-- $$J_\alpha(x) = \sum_{m=0}^\infty \frac{(-1)^m}{m! \Gamma (m + \alpha + 1)} {\left({ \frac{x}{2} }\right)}^{2m + \alpha}$$ -->
+<p>aaaaaaaaa</p>
+<p>aaaaaaaaa</p>
+<p>aaaaaaaaa</p>
+<p>aaaaaaaaa</p>
+<p>aaaaaaaaa</p>
+<p>aaaaaaaaa</p>
+<p>aaaaaaaaa</p>
+<p>aaaaaaaaa</p>
+<p>aaaaaaaaa</p>
+<p>aaaaaaaaa</p>
+<p>aaaaaaaaa</p>
+<p>aaaaaaaaa</p>
+<p>aaaaaaaaa</p>
+<p>aaaaaaaaa</p>
+<p>aaaaaaaaa</p>
+<p>aaaaaaaaa</p>
+<p>aaaaaaaaa</p>
+<p>aaaaaaaaa</p>
+<p>aaaaaaaaa</p>
+<p>aaaaaaaaa</p>
+<p>aaaaaaaaa</p>
+<p>aaaaaaaaa</p>
+<p>aaaaaaaaa</p>
+<p>aaaaaaaaa</p>
+<p>aaaaaaaaa</p>
+<p>aaaaaaaaa</p>
+<p>aaaaaaaaa</p>
+<p>aaaaaaaaa</p>
+<p>aaaaaaaaa</p>
+<p>aaaaaaaaa</p>
+<p>aaaaaaaaa</p>
+<p>aaaaaaaaa</p>
+<p>aaaaaaaaa</p>
+<p>aaaaaaaaa</p>
+<p>aaaaaaaaa</p>
+<p>aaaaaaaaa</p>
+<p>aaaaaaaaa</p>
+<p>aaaaaaaaa</p>
+<p>aaaaaaaaa</p>
+<p>aaaaaaaaa</p>
+<p>aaaaaaaaa</p>
+
+
+<!-- 这个回到顶部功能有问题  到达底部后无法使用 -->
+<!-- <script type="text/javascript">
+    $(function(){
+        $(window).scroll(function(){
+        	//alert($(window).scrollTop()); 获取滚动条到顶部的垂直高度 .
+            if($(window).scrollTop() >= 100){
+                $("#return_appear").fadeIn(1000);//一秒渐入动画
+            }else{
+                $("#return_appear").fadeOut(1000);//一秒渐隐动画
+            }
+        });
+         
+        $("#return_appear").click(function(){
+            $('body,html').animate({scrollTop:0},800);
+        });
+    });
+
+</script>
+<div id="return_appear" style="position:fixed;top:600px;right:20px;bottom:20px;display: none;">
+	<button class="glyphicon glyphicon-open btn-lg" aria-hidden="true"></button>
+</div> -->
+
+
+<!-- 这个回到顶部有用 还挺好看的 -->
+<!-- <div class="go-top">
+        <div class="arrow"></div>
+        <div class="stick"></div>
+</div>
+<style type="text/css">
+div.go-top {
+    display: none;
+    opacity: 0.6;
+    z-index: 999999;
+    position: fixed;
+    bottom: 60px;
+    left: 90%;
+    margin-left: 40px;
+    border: 1px solid #a38a54;
+    width: 38px;
+    height: 38px;
+    background-color: #eddec2;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+div.go-top:hover {
+    opacity: 1;
+    filter: alpha(opacity=100);
+}
+
+div.go-top div.arrow {
+    position: absolute;
+    left: 10px;
+    top: -1px;
+    width: 0;
+    height: 0;
+    border: 9px solid transparent;
+    border-bottom-color: #cc3333;
+}
+
+div.go-top div.stick {
+    position: absolute;
+    left: 15px;
+    top: 15px;
+    width: 8px;
+    height: 14px;
+    display: block;
+    background-color: #cc3333;
+    -webkit-border-radius: 1px;
+    -moz-border-radius: 1px;
+    border-radius: 1px;
+}
+</style>
+<script type="text/javascript">
+$(function() {
+    $(window).scroll(function() {
+        if ($(window).scrollTop() > 100)
+            $('div.go-top').show();
+        else
+            $('div.go-top').hide();
+    });
+    $('div.go-top').click(function() {
+        $('html, body').animate({scrollTop: 0}, 800);
+    });
+});
+</script> -->
+
 
 
 <%@ include file="footer.jsp" %>

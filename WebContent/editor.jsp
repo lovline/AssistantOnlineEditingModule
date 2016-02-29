@@ -3,6 +3,66 @@
 <%@page import="graduation.xidian.com.UserBean"%>
 <%@ include file="header.jsp" %>
 
+<!-- 回到顶部功能 -->
+<div class="go-top">
+     <div class="arrow"></div>
+     <div class="stick"></div>
+</div>
+<style type="text/css">
+	div.go-top {
+	    display: none;
+	    opacity: 0.6;
+	    z-index: 999999;
+	    position: fixed;
+	    bottom: 60px;
+	    left: 90%;
+	    margin-left: 40px;
+	    border: 1px solid #a38a54;
+	    width: 38px;
+	    height: 38px;
+	    background-color: #eddec2;
+	    border-radius: 3px;
+	    cursor: pointer;
+	}
+	div.go-top:hover {
+	    opacity: 1;
+	    filter: alpha(opacity=100);
+	}
+	div.go-top div.arrow {
+	    position: absolute;
+	    left: 10px;
+	    top: -1px;
+	    width: 0;
+	    height: 0;
+	    border: 9px solid transparent;
+	    border-bottom-color: #cc3333;
+	}
+	div.go-top div.stick {
+	    position: absolute;
+	    left: 15px;
+	    top: 15px;
+	    width: 8px;
+	    height: 14px;
+	    display: block;
+	    background-color: #cc3333;
+	    -webkit-border-radius: 1px;
+	    -moz-border-radius: 1px;
+	    border-radius: 1px;
+	}
+</style>
+<script type="text/javascript">
+$(function() {
+    $(window).scroll(function() {
+        if ($(window).scrollTop() > 100)
+            $('div.go-top').show();
+        else
+            $('div.go-top').hide();
+    });
+    $('div.go-top').click(function() {
+        $('html, body').animate({scrollTop: 0}, 800);
+    });
+});
+</script>
 <script type="text/javascript">
 	setInterval(function() {
 		var dd = new Date();
@@ -36,8 +96,9 @@
 		document.title = "在线编辑";
 		$("body").css("background-image","url(${pageContext.request.contextPath}/images/editorbg.jpg)");
 		$("#welcome").css("opacity",0.7);
-		$('a:contains("university")').text("")
-		.append("<img style='width:150px' src='${pageContext.request.contextPath}/images/logo1.png'></img>");
+// 		$('a:contains("university")').text("")
+// 		.append("<img style='width:150px' src='${pageContext.request.contextPath}/images/logo1.png'></img>");
+		$('.row div strong').css("color","white");
 		$("#beforeEditor").click(function(){
 			$("#beforeEditor").hide("normal");
 			$("#realEditor").show("normal","linear");
@@ -175,10 +236,10 @@
 			</form>
 		</div>
 		<hr>
-		<img src="images/mathjax.jpg" title="请点击查看数学公式编辑模块" data-toggle="collapse"
-			data-target="#demo2" style="opacity:0.7"></img>
+		<img src="images/mathjax.jpg" title="请点击查看数学展示编辑模块" data-toggle="collapse"
+			data-target="#demo2" style="opacity:0.7;margin-bottom:10px"></img>
 		<div id="demo2" class="collapse"> <!-- class="collapse in"指的是默认打开折叠层 -->
-			<div style="margin-top: 10px;background-color: #F1F1F1;">
+			<div style="margin-top: 10px;margin-bottom:10px; background-color: #F1F1F1;">
 					<font size="4" color="black">
 					【 $1 \over 3$ 】
 					【 $\sqrt[n]{3}$ 】
@@ -199,6 +260,11 @@
 					【 $J_\alpha(x) = \sum_{m=0}^\infty \frac{(-1)^m}{m! \Gamma (m + \alpha + 1)} {\left({ \frac{x}{2} }\right)}^{2m + \alpha}$ 】
 					</font>
 			</div>
+		</div>
+		<hr>
+		<img src="images/unknown.jpg" title="点击查看数学公式编辑模块" data-toggle="collapse" data-target="#demo3"></img>
+		<div id="demo3" class="collapse">
+			<!-- codess -->
 		</div>
 	</div>
 	
