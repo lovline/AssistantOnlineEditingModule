@@ -172,7 +172,7 @@ $(function() {
 	</div>
 
 	<div class="col-md-8 col-md-offset-2" style="margin-top: 10px;">
-		<img src="images/ckeditor.jpg" title="请点击查看在线编辑模块" data-toggle="collapse"
+		<img src="images/ckeditor.jpg" title="请点击使用在线编辑模块" data-toggle="collapse"
 			data-target="#demo" style="opacity:0.7"></img>
 		<div id="demo" class="collapse">
 			<form action="editor" method="post">
@@ -262,10 +262,11 @@ $(function() {
 			</div>
 		</div>
 		<hr>
-		<img src="images/unknown.jpg" title="点击查看数学公式编辑模块" data-toggle="collapse" data-target="#demo3"></img>
+		<img src="images/LaTex.jpg" title="点击使用数学公式编辑模块" data-toggle="collapse" data-target="#demo3"></img>
 		<div id="demo3" class="collapse">
-			<!-- codess -->
+			<iframe src="http://www.codecogs.com/latex/eqneditor.php" width="780px" height="500px" ></iframe>
 		</div>
+		<hr>
 	</div>
 	
 	

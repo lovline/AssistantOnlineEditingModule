@@ -17,6 +17,12 @@
 <!-- 			<a href="#carousel1" data-slide="next" class="right carousel-control">.</a>		 -->
 <!-- 		</div> -->
 
+<!-- 数学公式在线编辑器不可行。。。 -->
+<%-- <p><a href="javascript:OpenLatexEditor('testbox','html','')">
+点击此处开始编辑公式</a><font color="green">
+（*打开编辑窗口后，编辑完公式后，点击‘复制到文档中’按钮，然后关闭编辑窗口即可）</font>
+</p><textarea id="#testbox" name="fimg" rows="3"  cols="40">${ vof.fimg }</textarea>
+ --%>
 <!-- 旋转木马测试 -->
 <%-- <div id="myCarousel" class="carousel slide">
 	<!-- Carousel items -->
@@ -61,7 +67,7 @@
 
 <!-- 测试折叠内容的代码 -->
 <!-- 	<button class="btn btn-danger" data-toggle="collapse" data-target="#demo">  简单手风琴效果</button> -->
-<div class="col-md-8 col-md-offset-2">
+<!-- <div class="col-md-8 col-md-offset-2">
 	<div class="alert alert-success" role="alert">click the photo and do what you want !</div>
 	<img src="images/ckeditor.jpg" title="在线编辑模块" data-toggle="collapse" data-target="#demo"></img>
 	<div id="demo" class="collapse"> 这尼玛是什么鬼。。</div>
@@ -69,13 +75,13 @@
 	<div class="alert alert-success" role="alert">click the photo and do what you want !</div>
 	<img src="images/mathjax.jpg" title="数学公式编辑模块" data-toggle="collapse" data-target="#demo2"></img>
 	<div id="demo2" class="collapse"> 1245jkde。。</div>
-</div>
+</div> -->
 
-<!-- 回到顶部测试 -->
+<!-- <!-- 回到顶部测试
 <button class="glyphicon glyphicon-open btn-lg" aria-hidden="true" aria-label="返回顶部"></button>
 <a href="#return_top">
 	<button class="glyphicon glyphicon-open btn-lg" aria-hidden="true" aria-label="返回顶部"></button>
-</a>
+</a> --> -->
  
 
  <!-- 网页中显示数学公式测试  这里使LaTex语法编写 -->
@@ -96,7 +102,7 @@
 <!-- $$f(x,y,z) = 3y^2z \left( 3+\frac{7x+5}{1+y^2} \right)$$ -->
 <!-- $$f(x_1,x_2,\ldots,x_n) = x_1^2 + x_2^2 + \cdots + x_n^2$$ -->
 <!-- $$J_\alpha(x) = \sum_{m=0}^\infty \frac{(-1)^m}{m! \Gamma (m + \alpha + 1)} {\left({ \frac{x}{2} }\right)}^{2m + \alpha}$$ -->
-<p>aaaaaaaaa</p>
+<!-- <p>aaaaaaaaa</p>
 <p>aaaaaaaaa</p>
 <p>aaaaaaaaa</p>
 <p>aaaaaaaaa</p>
@@ -138,7 +144,7 @@
 <p>aaaaaaaaa</p>
 <p>aaaaaaaaa</p>
 
-
+ -->
 <!-- 这个回到顶部功能有问题  到达底部后无法使用 -->
 <!-- <script type="text/javascript">
     $(function(){
