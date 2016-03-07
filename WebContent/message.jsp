@@ -75,10 +75,10 @@
 			<div>	
 				<table class="table table-condensed" id="message_table">
 					<tr id="message_header">
-						<td>message_id</td>
-						<td>message_owner</td>
-						<td>message_content</td>
-						<td>message_datetime</td>
+						<td><font size="4px;">留言数目message_id</font></td>
+						<td><font size="4px;">留言作者message_owner</font></td>
+						<td><font size="4px;">留言内容 message_content</font></td>
+						<td><font size="4px;">留言时间message_datetime</font></td>
 					</tr>
 					<c:forEach items="${ requestScope.message_list }" var="list_message" varStatus="status">
 						<tr>
